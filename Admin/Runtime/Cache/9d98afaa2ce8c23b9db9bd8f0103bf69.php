@@ -1,0 +1,144 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>缓存清除 | 汉富通后台</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<?php echo R('Public/include_css', '', 'Widget');?>
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="__PUBLIC__/vendor/metronic-bootstrap/image/favicon.ico" />
+
+	<style type="text/css">
+		.cache-tip{
+			padding: 20px 0px 10px 20px;
+			width: 98%;
+			height: auto;
+			margin-top: 30px;
+			border: 1px dashed red;
+		}
+		.cache-tip p{
+			color: gray;
+			font-size: 24px;
+		}
+		.cache-tip p span{
+			color: red;
+			line-height: 34px;
+		}
+		.cache-tip h4{
+			color: blue;
+		}
+		.green{
+			margin-top: 30px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-right: 20px;
+		}
+		.cache-content{
+			margin-top: 50px;
+		}
+		.cache-content p{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<?php echo R('Public/header', '', 'Widget');?>
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<?php echo R('Public/leftmenu', '', 'Widget');?>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<?php echo R('Public/color_panel', '', 'Widget');?>
+						<?php echo R('Public/main_top', '', 'Widget');?>
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- 主要内容部分 wangfan -->
+				<div id="dashboard">
+					<div class="portlet box blue">
+						<div class="portlet-title">
+							<div class="caption"><i class="icon-home"></i> 清除网站缓存</div>
+						</div>
+					</div>
+
+					<div class="row-fluid">
+						<div class="cache-tip">
+							<p>
+								<span>如果你在编辑修改了相关内容后，而在网站前台或后台无法看到修改的变化</span><br>
+								<span>那么可以考虑清除对应的缓存来解决该问题</span><br>
+								<h4>[当然也有可能是其他原因导致的]</h4>
+							</p>
+						</div>
+						<div class="cache-tip">
+							<p>
+								<span>缓存文件过多，会占用过多的磁盘空间，可以进行缓存清除</span><br>
+							</p>
+						</div>
+						<div class="cache-content">
+							<p>目前前台共有 <?php echo ($home_num); ?> 个缓存文件</p>
+							<p>目前后台共有 <?php echo ($admin_num); ?> 个缓存文件</p>
+							<a href="__APP__/System/clearhome" class="btn mini green"><i class="icon-trash"></i> 清除前台缓存</a>
+							<a href="__APP__/System/clearAdmin" class="btn mini green"><i class="icon-trash"></i> 清除后台缓存</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END PAGE CONTAINER-->    
+		</div>
+		<!-- END PAGE -->
+	</div>
+	<!-- END CONTAINER -->
+
+	<?php echo R('Public/footer', '', 'Widget');?>
+	
+	<?php echo R('Public/include_js', '', 'Widget');?>
+	<script>
+		jQuery(document).ready(function() {    
+		   App.init(); // initlayout and core plugins
+		   Index.init();
+		   Index.initJQVMAP(); // init index page's custom scripts
+		   Index.initCalendar(); // init index page's custom scripts
+		   Index.initCharts(); // init index page's custom scripts
+		   Index.initChat();
+		   Index.initMiniCharts();
+		   Index.initDashboardDaterange();
+		   Index.initIntro();
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+  	_gaq.push(['_setAccount', 'UA-37564768-1']);
+    _gaq.push(['_setDomainName', 'keenthemes.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    (function() {    
+    	var ga = document.createElement('script'); 
+        ga.type = 'text/javascript'; 
+        ga.async = true;    
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);  
+    })();
+</script>
+</body>
+<!-- END BODY -->
+</html>

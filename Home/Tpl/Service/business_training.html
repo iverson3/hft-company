@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>商户培训</title>
+	<link href="__PUBLIC__/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#c2{
+			background-color: #F4F4F4;
+			height: auto;
+			padding: 30px 30px 40px 30px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/header', '', 'Widget')}>
+	<include file="Public:img_bar"/>
+
+	<div id="main">
+		<div class="container" id="summary-container">
+	        <div class="row">
+	        	<span id="sign">6</span>
+	            <include file="Public:left-menu-service"/>
+	            <div class="col-md-8" id="c2">
+	              	<div>
+	              		<{$page}>
+	              	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<include file="Public:back-top"/>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/footer', '', 'Widget')}>
+
+
+
+	<!--[if lte IE 9]>
+	<script src="__PUBLIC__/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="__PUBLIC__/vendor/bootstrap/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script> -->
+	<script src="__PUBLIC__/vendor/bootstrap/js/jquery-1.9.1.js"></script>
+    <script src="__PUBLIC__/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+      });
+    </script>
+</body>
+</html>

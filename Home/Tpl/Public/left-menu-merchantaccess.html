@@ -1,0 +1,31 @@
+<include file="Public:include_left_menu_css"/>
+
+
+<div class="col-md-2" id="c1">
+	<div class="menu-title">商家接入</div>
+	<span></span>
+	<div id="left-menus">
+		<div id="sign1"><a class="left-menu-a" href="__APP__/Merchantaccess/access_process">接入流程</a></div>
+		<div id="sign2"><a class="left-menu-a" href="__APP__/Merchantaccess/operating_advantage">运营服务优势</a></div>
+		<div id="sign3"><a class="left-menu-a" href="__APP__/Merchantaccess/background_advantage">后台支撑优势</a></div>
+		<div id="sign4"><a class="left-menu-a" href="__APP__/Merchantaccess/pos_problems">POS机办理问题</a></div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	window.onload = function(){
+		var sign = $('#sign').html();
+		for(var i = 1; i < 5; i++){
+			if (i == sign){
+				$("#sign" + i).addClass('signs');
+				$("#sign" + i + " a:only-child").removeClass('hover-menu-a');
+				$("#sign" + i + " a:only-child").addClass('menu-a');
+			}else{
+				$("#sign" + i).addClass('hover-signs');
+				$("#sign" + i + " a:only-child").addClass('hover-menu-a');
+			}
+		}
+	}
+</script>

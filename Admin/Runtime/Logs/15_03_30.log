@@ -1,0 +1,24 @@
+[ 2015-03-30T17:33:26+08:00 ] 127.0.0.1 /PHPWeb/company/admin.php/Download/assets/plugins/jquery-file-upload/server/php/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:assets
+
+[ 2015-03-30T17:33:26+08:00 ] 127.0.0.1 /PHPWeb/company/admin.php/Download/assets/plugins/jquery-file-upload/server/php/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:assets
+
+[ 2015-03-30T17:33:45+08:00 ] 127.0.0.1 /PHPWeb/company/admin.php/Download/assets/plugins/jquery-file-upload/server/php/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:assets
+
+[ 2015-03-30T17:33:45+08:00 ] 127.0.0.1 /PHPWeb/company/admin.php/Download/assets/plugins/jquery-file-upload/server/php/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+ERR: 非法操作:assets
+

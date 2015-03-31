@@ -1,0 +1,34 @@
+<include file="Public:include_left_menu_css"/>
+
+
+<div class="col-md-2" id="c1">
+	<div class="menu-title">金融知识</div>
+	<span></span>
+	<div id="left-menus">
+		<div id="sign1"><a class="left-menu-a" href="__APP__/Financialknows/rmb">人民币知识</a></div>
+		<div id="sign2"><a class="left-menu-a" href="__APP__/Financialknows/bank_card">银行卡知识</a></div>
+		<div id="sign3"><a class="left-menu-a" href="__APP__/Financialknows/anti_money">反洗钱知识</a></div>
+		<div id="sign4"><a class="left-menu-a" href="__APP__/Financialknows/pay">支付结算知识</a></div>
+		<div id="sign5"><a class="left-menu-a" href="__APP__/Financialknows/financial_security">个人金融信息安全</a></div>
+		<div id="sign6"><a class="left-menu-a" href="__APP__/Financialknows/financial_law">金融法律法规解答</a></div>
+		<div id="sign7"><a class="left-menu-a" href="__APP__/Financialknows/financial_knows">金融知识普及读本</a></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	window.onload = function(){
+		var sign = $('#sign').html();
+		
+		for(var i = 1; i < 8; i++){
+			if (i == sign){
+				$("#sign" + i).addClass('signs');
+				$("#sign" + i + " a:only-child").removeClass('hover-menu-a');
+				$("#sign" + i + " a:only-child").addClass('menu-a');
+			}else{
+				$("#sign" + i).addClass('hover-signs');
+				$("#sign" + i + " a:only-child").addClass('hover-menu-a');
+			}
+		}
+	}
+</script>

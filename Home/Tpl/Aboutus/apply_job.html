@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>职位申请</title>
+	<link href="__PUBLIC__/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#c2{
+			background-color: #F4F4F4;
+			height: auto;
+			border: 1px solid #DFDFDF;
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+		}
+		#c2 .tip{
+			width: 100%;
+			height: auto;
+			border: 1px dashed gray;
+			margin-top: 10px;
+		}
+		#c2 .tip p{
+			padding: 15px 15px 6px 15px;
+			color: gray;
+			line-height: 26px;
+		}
+		.tip-p{
+			text-align: center;
+			color: gray;
+			margin-top: 22px;
+		}
+
+
+
+		table{
+			margin-top: 30px;
+			font-size: 3px;
+			padding-top: 2px;
+		}
+		table tr td{
+			min-width: 70px;
+			text-align: center;
+		}
+		.td-divs{
+			padding-top: 7px;
+			height: 30px;
+			width: 100%;
+		}
+		#myself{
+			resize: none;
+			height: 120px;
+		}
+		#resume{
+			resize: none;
+			height: 180px;
+		}
+		#td-code{
+			text-align: left;
+		}
+		#code{
+			width: 200px;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		#tr-res td{
+			height: 100px;
+		}
+		#tr-res td input{
+			margin-top: 40px;
+		}
+
+		.back{
+			border-top: 1px dashed gray;
+			margin-top: 50px;
+			text-align: right;
+			width: 100%;
+			padding-top: 30px;
+			padding-bottom: 10px;
+		}
+		.back a{
+			margin-right: 16px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/header', '', 'Widget')}>
+	<include file="Public:img_bar"/>
+
+	<div id="main">
+		<div class="container" id="summary-container">
+	        <div class="row">
+	        	<span id="sign">6</span>
+	            <include file="Public:left-menu-aboutus"/>
+	            <div class="col-md-8" id="c2">
+	              	<div class="tip">
+	              		<p>郑重声明：请如实填写相关内容，对填报虚假信息如学历、工作经历以及其他相关内容，损害公司利益获得任职资格者，将依法追究法律责任。</p>
+	              	</div>
+	              	<p class="tip-p">[对自荐申请资料中任何有关个人的信息，我们将无条件履行保密义务，尽职尽责地保护您的隐私]</p>
+
+	              	<form method="post" action="__APP__/Aboutus/do_apply_job">
+	              		<table class="table table-bordered">
+	              			<tr>
+	              				<td><div class="td-divs">姓名<font color="red">*</font></div></td><td><input type="text" class="form-control" name="name"></td> 
+	              				<td><div class="td-divs">性别<font color="red">*</font></div></td><td><div class="form-group">
+											        <select name="sex" class="form-control"> 
+											          	<option>男</option> 
+											          	<option>女</option> 
+											        </select>
+											    </div>
+											</td> 
+	              				<td><div class="td-divs">民族<font color="red">*</font></div></td><td><div class="form-group">
+											        <select name="nation" class="form-control"> 
+											          	<option>汉族</option> 
+											          	<option>少数民族</option> 
+											        </select>
+											    </div>
+											</td>
+	              			</tr>
+	              			<tr>
+	              				<td><div class="td-divs">出生日期</div></td><td><input type="date" class="form-control" name="birthday"></td> 
+	              				<td><div class="td-divs">身高(cm)</div></td><td><input type="text" class="form-control" name="height"></td> 
+	              				<td><div class="td-divs">工作经验<font color="red">*</font></div></td><td><input type="text" class="form-control" name="experience"></td>
+	              			</tr>
+	              			<tr>
+	              				<td><div class="td-divs">婚姻状况</div></td><td><div class="form-group">
+											        <select name="marital_status" class="form-control"> 
+											          	<option>未婚</option> 
+											          	<option>已婚</option> 
+											          	<option>离异</option> 
+											        </select>
+											    </div>
+											</td> 
+	              				<td><div class="td-divs">户籍</div></td><td><input type="text" class="form-control" name="household"></td> 
+	              				<td><div class="td-divs">现住地址</div></td><td><input type="text" class="form-control" name="now_addr"></td>
+	              			</tr>
+	              			<tr>
+	              				<td><div class="td-divs">学历<font color="red">*</font></div></td><td>
+	              								<div class="form-group">
+											        <select name="degrees" class="form-control"> 
+											          	<option>专科</option> 
+											          	<option>本科</option> 
+											          	<option>研究生</option> 
+											          	<option>博士</option> 
+											        </select>
+											    </div>
+											</td> 
+	              				<td><div class="td-divs">毕业学院<font color="red">*</font></div></td><td><input type="text" class="form-control" name="graduate_school"></td> 
+	              				<td><div class="td-divs">所学专业<font color="red">*</font></div></td><td><input type="text" class="form-control" name="major"></td>
+	              			</tr>
+	              			<tr>
+	              				<td><div class="td-divs">毕业时间<font color="red">*</font></div></td><td><input type="text" class="form-control" name="graduate_time"></td> 
+	              				<td><div class="td-divs">外语水平<font color="red">*</font></div></td><td><input type="text" class="form-control" name="foreign_level"></td> 
+	              				<td><div class="td-divs">目前工作</div></td><td><input type="text" class="form-control" name="now_job"></td>
+	              			</tr>
+	              			<tr>
+	              				<td><div class="td-divs">固定电话</div></td><td><input type="text" class="form-control" name="tel"></td> 
+	              				<td><div class="td-divs">手机<font color="red">*</font></div></td><td><input type="text" class="form-control" name="phone"></td> 
+	              				<td><div class="td-divs">电子邮件<font color="red">*</font></div></td><td><input type="email" class="form-control" name="email"></td>
+	              			</tr>
+
+	              			<tr><td><div class="td-divs">联系地址<font color="red">*</font></div></td><td colspan="5"><input type="text" class="form-control" name="contact_addr"></td></tr>
+
+	              			<tr rowspan="3"><td><div class="td-divs">自我评价</div></td><td colspan="5"><textarea name="evaluation" id="myself" class="form-control" rows="3"></textarea></td> </tr>
+	              			<tr rowspan="5"><td><div class="td-divs">个人简历<font color="red">*</font></div></td><td colspan="5"><textarea name="resume" id="resume" class="form-control" rows="3"></textarea></td> </tr>
+	              			<tr rowspan="2">
+	              				<td><div class="td-divs">验证码<font color="red">*</font></div></td>
+	              				<td colspan="5" id="td-code">
+	              					<input type="text" class="form-control" name="code" id="code"> 
+	              					<img src="__APP__/Public/code?width=50" onclick='this.src=this.src+"?"+Math.random()' title="看不清?点击更换">
+	              					<input type="hidden" name="job_id" value="<{$job_id}>">
+	              					<font color="red" size="5px">&nbsp;&nbsp;&nbsp;&nbsp;(提示: 标" * "为必填)</font>
+	              				</td> 
+	              			</tr>
+	              			<tr id="tr-res">
+	              				<td colspan="2"></td>
+	              				<td colspan="1">
+	              					<input class="btn btn-primary" type="submit" value="提 交">
+	              				</td>
+	              				<td colspan="1">
+	              					<input class="btn btn-info" type="reset" value="重 置">
+	              				</td>
+	              				<td colspan="2"></td>
+	              			</tr>
+	              		</table>
+	              	</form>
+
+	              	<div class="back">
+						<a href="javascript:;" onclick="javascript:history.go(-1)">返回职位详情页</a>
+					</div>
+	              	
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<include file="Public:back-top"/>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/footer', '', 'Widget')}>
+
+
+
+	<!--[if lte IE 9]>
+	<script src="__PUBLIC__/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="__PUBLIC__/vendor/bootstrap/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script> -->
+	<script src="__PUBLIC__/vendor/bootstrap/js/jquery-1.9.1.js"></script>
+    <script src="__PUBLIC__/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+      });
+    </script>
+</body>
+</html>

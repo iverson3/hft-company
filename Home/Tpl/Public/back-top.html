@@ -1,0 +1,44 @@
+<style type="text/css">
+	#gotop{
+        position: fixed;
+        bottom: 50px;
+        right: 15px;
+        cursor: pointer;
+    }
+</style>
+
+
+<div id="gotop">
+    <img src="__PUBLIC__/Images/goto_top.png" alt="回到顶部" title="回到顶部" onclick="backToTop()" />
+</div>
+
+
+<script type="text/javascript">
+	var scrolldelay;
+
+    function backToTop() {
+        scrolldelay = setInterval(ScrolltoTop, 10);
+    }
+
+    function ScrolltoTop() {
+        window.scrollBy(0, -100);
+        var h = getScrollTop();
+        if (h <= 2) {
+            //当到达顶部时  清除setInterval()方法 
+            clearInterval(scrolldelay);
+        }
+    }
+
+	//获取滚动条距离顶端的距离 
+    function getScrollTop() {
+        var scrollPos;
+        if(window.pageYOffset){
+            scrollPos = window.pageYOffset;
+        }else if(document.compatMode && document.compatMode != 'BackCompat'){ 
+            scrollPos = document.documentElement.scrollTop; 
+        }else if(document.body){
+            scrollPos = document.body.scrollTop; 
+        }
+        return scrollPos;
+    }
+</script>

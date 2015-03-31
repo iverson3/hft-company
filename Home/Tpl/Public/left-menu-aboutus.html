@@ -1,0 +1,35 @@
+<include file="Public:include_left_menu_css"/>
+
+
+<div class="col-md-2" id="c1">
+	<div class="menu-title">关于我们</div>
+	<span></span>
+	<div id="left-menus">
+		<div id="sign1"><a class="left-menu-a" href="__APP__/Aboutus/company_introduce">公司介绍</a></div>
+		<div id="sign2"><a class="left-menu-a" href="__APP__/Aboutus/team_advantage">团队优势</a></div>
+		<div id="sign3"><a class="left-menu-a" href="__APP__/Aboutus/risk_control">风险控制</a></div>
+		<div id="sign4"><a class="left-menu-a" href="__APP__/Aboutus/enterprise_culture">企业文化</a></div>
+		<div id="sign5"><a class="left-menu-a" href="__APP__/Aboutus/company_structure">公司组织架构</a></div>
+		<div id="sign6"><a class="left-menu-a" href="__APP__/Aboutus/jobs">招贤纳士</a></div>
+		<div id="sign7"><a class="left-menu-a" href="__APP__/Aboutus/download">资料下载</a></div>
+		<div id="sign8"><a class="left-menu-a" href="__APP__/Aboutus/contact_us">联系我们</a></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	window.onload = function(){
+		var sign = $('#sign').html();
+		
+		for(var i = 1; i < 9; i++){
+			if (i == sign){
+				$("#sign" + i).addClass('signs');
+				$("#sign" + i + " a:only-child").removeClass('hover-menu-a');
+				$("#sign" + i + " a:only-child").addClass('menu-a');
+			}else{
+				$("#sign" + i).addClass('hover-signs');
+				$("#sign" + i + " a:only-child").addClass('hover-menu-a');
+			}
+		}
+	}
+</script>

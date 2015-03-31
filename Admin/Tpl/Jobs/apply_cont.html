@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>职位申请详情 | 汉富通后台</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<{:R('Public/include_css', '', 'Widget')}>
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="__PUBLIC__/vendor/metronic-bootstrap/image/favicon.ico" />
+
+	<style type="text/css">
+		.span3 div{
+			width: 240px;
+			height: 300px;
+			border: 1px solid gray;
+		}
+		.span6 div{
+			width: 480px;
+			height: 300px;
+			border: 1px solid gray;
+		}
+		.span7 div{
+			width: 900px;
+			height: 300px;
+			border: 1px solid gray;
+		}
+
+		#job-tr div{
+			float: left;
+			padding-top: 8px;
+		}
+		#job-tr a{
+			float: left;
+			width: 160px;
+			margin-left: 58px;
+		}
+		.green{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<{:R('Public/header', '', 'Widget')}>
+	
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<{:R('Public/leftmenu', '', 'Widget')}>
+		<!-- END SIDEBAR -->
+
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>Widget Settings</h3>
+				</div>
+				<div class="modal-body">
+					Widget settings form goes here
+				</div>
+			</div>
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<{:R('Public/color_panel', '', 'Widget')}>
+						<{:R('Public/main_top', '', 'Widget')}>
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+
+				<!-- 主要内容部分 wangfan -->
+				<div id="dashboard">
+
+					<div class="portlet box blue">
+						<div class="portlet-title">
+							<div class="caption"><i class="icon-home"></i> 职位申请信息详情</div>
+						</div>
+					</div>
+
+					<volist name="res" id="vo">
+              		<table class="table table-bordered">
+              			<tr>
+              				<td><div class="td-divs">姓名:</div></td><td><{$vo.name}></td> 
+              				<td><div class="td-divs">性别:</div></td><td><{$vo.sex}></td> 
+              				<td><div class="td-divs">民族:</div></td><td><{$vo.nation}></td>
+              			</tr>
+              			<tr>
+              				<td><div class="td-divs">出生日期:</div></td><td><{$vo.birthday}></td> 
+              				<td><div class="td-divs">身高(cm):</div></td><td><{$vo.height}></td> 
+              				<td><div class="td-divs">工作经验:</div></td><td><{$vo.experience}></td>
+              			</tr>
+              			<tr>
+              				<td><div class="td-divs">婚姻状况:</div></td><td><{$vo.marital_status}></td> 
+              				<td><div class="td-divs">户籍:</div></td><td><{$vo.household}></td> 
+              				<td><div class="td-divs">现住地址:</div></td><td><{$vo.now_addr}></td>
+              			</tr>
+              			<tr>
+              				<td><div class="td-divs">学历:</div></td><td><{$vo.degrees}></td> 
+              				<td><div class="td-divs">毕业学院:</div></td><td><{$vo.graduate_school}></td> 
+              				<td><div class="td-divs">所学专业:</div></td><td><{$vo.major}></td>
+              			</tr>
+              			<tr>
+              				<td><div class="td-divs">毕业时间:</div></td><td><{$vo.graduate_time}></td> 
+              				<td><div class="td-divs">外语水平:</div></td><td><{$vo.foreign_level}></td> 
+              				<td><div class="td-divs">目前工作:</div></td><td><{$vo.now_job}></td>
+              			</tr>
+              			<tr>
+              				<td><div class="td-divs">固定电话:</div></td><td><{$vo.tel}></td> 
+              				<td><div class="td-divs">手机:</div></td><td><{$vo.phone}></td> 
+              				<td><div class="td-divs">电子邮件:</div></td><td><{$vo.email}></td>
+              			</tr>
+
+              			<tr><td><div class="td-divs">联系地址:</div></td><td colspan="5"><{$vo.contact_addr}></td></tr>
+
+              			<tr rowspan="3"><td><div class="td-divs">自我评价:</div></td><td colspan="5"><{$vo.evaluation}></td> </tr>
+              			<tr rowspan="5"><td><div class="td-divs">个人简历:</div></td><td colspan="5"><{$vo.resume}></td> </tr>
+              			<tr rowspan="3" id="job-tr"><td><div class="td-divs">申请职位:</div></td><td colspan="5"><div><{$vo.job}></div><a href="__APP__/Jobs/update/id/<{$vo.job_id}>" class="btn blue btn-block">点击查看该职位 <i class="m-icon-swapright m-icon-white"></i></a></td> </tr>
+              		</table>
+              		<a href="__APP__/Jobs/delete_apply/id/<{$vo.id}>" class="btn mini green"><i class="icon-trash"></i> 删除该职位申请</a>
+					</volist>
+
+				</div>
+			</div>
+			<!-- END PAGE CONTAINER-->    
+
+		</div>
+		<!-- END PAGE -->
+	</div>
+	<!-- END CONTAINER -->
+
+	<{:R('Public/footer', '', 'Widget')}>
+	
+	<{:R('Public/include_js', '', 'Widget')}>
+	<script>
+		jQuery(document).ready(function() {    
+		   App.init(); // initlayout and core plugins
+		   Index.init();
+		   Index.initJQVMAP(); // init index page's custom scripts
+		   Index.initCalendar(); // init index page's custom scripts
+		   Index.initCharts(); // init index page's custom scripts
+		   Index.initChat();
+		   Index.initMiniCharts();
+		   Index.initDashboardDaterange();
+		   Index.initIntro();
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+  	_gaq.push(['_setAccount', 'UA-37564768-1']);
+    _gaq.push(['_setDomainName', 'keenthemes.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    (function() {    
+    	var ga = document.createElement('script'); 
+        ga.type = 'text/javascript'; 
+        ga.async = true;    
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);  
+    })();
+</script>
+</body>
+<!-- END BODY -->
+</html>

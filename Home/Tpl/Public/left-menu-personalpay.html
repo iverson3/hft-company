@@ -1,0 +1,27 @@
+<include file="Public:include_left_menu_css"/>
+
+
+<div class="col-md-2" id="c1">
+	<div class="menu-title">理财投资</div>
+	<span></span>
+	<div id="left-menus">
+		<div id="sign2"><a class="left-menu-a" href="__APP__/Personalpay/product_introduction">产品介绍</a></div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	window.onload = function(){
+		var sign = $('#sign').html();
+		for(var i = 1; i < 3; i++){
+			if (i == sign){
+				$("#sign" + i).addClass('signs');
+				$("#sign" + i + " a:only-child").removeClass('hover-menu-a');
+				$("#sign" + i + " a:only-child").addClass('menu-a');
+			}else{
+				$("#sign" + i).addClass('hover-signs');
+				$("#sign" + i + " a:only-child").addClass('hover-menu-a');
+			}
+		}
+	}
+</script>

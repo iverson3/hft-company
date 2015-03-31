@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>下载资料详情</title>
+	<link href="__PUBLIC__/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#c2{
+			background-color: #F4F4F4;
+			height: auto;
+			padding: 40px;
+		}
+		.panel-heading{
+			font-weight: bold;
+			font-size: 20px;
+		}
+	</style>
+	<include file="Public:include_pagebar_css"/>
+</head>
+<body>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/header', '', 'Widget')}>
+	<include file="Public:img_bar"/>
+
+	<div id="main">
+		<div class="container" id="summary-container">
+	        <div class="row">
+	        	<span id="sign">7</span>
+	            <include file="Public:left-menu-aboutus"/>
+	            <div class="col-md-8" id="c2">
+	              	<div class="panel panel-default">
+	              	  	<!-- Default panel contents -->
+	              	  	<div class="panel-heading">下载资料详情</div>
+	              	  	<!-- 下载列表 -->
+	              	  	<table class="table">
+	              	    	<tr class="title">
+	              	    		<td>#</td><td>资料名称</td><td>文件大小</td><td>更新时间</td><td>下载次数</td><td>下载地址</td>
+	              	    	</tr>
+							<volist name="list" id="vo">
+							    <tr class="content">
+    	              	    		<td><{$i}></td>
+    	              	    		<td><{$vo.real_filename}></td>
+    	              	    		<td><{$vo.filesize}></td>
+    	              	    		<td><{$vo.update_time}></td>
+    	              	    		<td><{$vo.download_times}></td>
+    	              	    		<td><a href="__URL__/do_download?id=<{$vo.id}>&filename=<{$vo.filename}>&real_filename=<{$vo.real_filename}>"><span class="glyphicon glyphicon-save"></span></a></td>
+    	              	    	</tr>
+							</volist>
+	              	  	</table>
+	              	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<include file="Public:back-top"/>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/footer', '', 'Widget')}>
+
+
+	<!--[if lte IE 9]>
+	<script src="__PUBLIC__/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="__PUBLIC__/vendor/bootstrap/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script> -->
+	<script src="__PUBLIC__/vendor/bootstrap/js/jquery-1.9.1.js"></script>
+    <script src="__PUBLIC__/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+      });
+    </script>
+</body>
+</html>

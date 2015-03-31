@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>招贤纳士</title>
+	<link href="__PUBLIC__/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#c2{
+			background-color: #F4F4F4;
+			height: auto;
+			padding: 35px;
+		}
+		
+		.jobs_list div{
+			margin: 10px 0px 15px 10px;
+			border-bottom: 1px dashed gray;
+			padding: 6px 0px 10px 0px;
+		}
+		.jobs_list div span{
+			color: gray;
+
+		}
+		.jobs_title{
+			width: 100px;
+			margin-left: 8px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.jobs_treatment{
+			margin-left: 6px;
+		}
+		.jobs_time{
+			float: right;
+		}
+	</style>
+	<include file="Public:include_pagebar_css"/>
+</head>
+<body>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/header', '', 'Widget')}>
+	<include file="Public:img_bar"/>
+
+	<div id="main">
+		<div class="container" id="summary-container">
+	        <div class="row">
+	        	<span id="sign">6</span>
+	            <include file="Public:left-menu-aboutus"/>
+	            <div class="col-md-8" id="c2">
+
+              		<div class="jobs_list">
+              			<volist name="list" id="vo">
+              			    <div>
+              			    	<span class="glyphicon glyphicon-pencil"></span>
+              			        <span class="jobs_title">
+              			        	<a href="__APP__/Aboutus/recruitment_info/id/<{$vo.id}>"><{$vo.title}></a>
+              			        </span>
+              			        <span class="jobs_treatment"><{$vo.treatment}>/年</span>
+              			        <span class="jobs_time"><{$vo.create_time}></span>
+              			    </div>
+              			</volist>
+              		</div>
+              	  	<div class="pageBar"><{$pageBar}></div>
+
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<include file="Public:back-top"/>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/footer', '', 'Widget')}>
+
+
+
+	<!--[if lte IE 9]>
+	<script src="__PUBLIC__/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="__PUBLIC__/vendor/bootstrap/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script> -->
+	<script src="__PUBLIC__/vendor/bootstrap/js/jquery-1.9.1.js"></script>
+    <script src="__PUBLIC__/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+      });
+    </script>
+</body>
+</html>

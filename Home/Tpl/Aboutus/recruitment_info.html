@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>招聘信息详情</title>
+	<link href="__PUBLIC__/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#c2{
+			background-color: #F4F4F4;
+			height: auto;
+			padding-left: 50px;
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+		}
+		#c2 img{
+			max-width: 84%;
+		}
+		#c2 p{
+			color: gray;
+		}
+
+		.jobs-title{
+			font-weight: bold;
+			font-size: 21px;
+			border-bottom: 1px dashed gray;
+			padding: 28px 0px 28px 15px;
+			margin-bottom: 14px;
+		}
+		table{
+			width: 600px;
+			height: 160px;
+			margin-top: 18px;
+			margin-left: 13px;
+			color: gray;
+			font-size: 16px;
+		}
+		#apply_but{
+			margin-top: 50px;
+			margin-left: 36%;
+		}
+		.jobs-describe{
+			font-size: 20px;
+			margin-top: 30px;
+			margin-left: 13px;
+		}
+		.describe-cont{
+			margin-left: 13px;
+			line-height: 30px;
+			font-weight: bold;
+			color: gray;
+			font-size: 13px;
+		}
+		#jobs-contact{
+			margin-top: -15px;
+		}
+		.back{
+			border-top: 1px dashed gray;
+			margin-top: 50px;
+			text-align: right;
+			width: 100%;
+			padding-top: 30px;
+			padding-bottom: 10px;
+		}
+		.back a{
+			margin-right: 16px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/header', '', 'Widget')}>
+	<include file="Public:img_bar"/>
+
+	<div id="main">
+		<div class="container" id="summary-container">
+	        <div class="row">
+	        	<span id="sign">6</span>
+	            <include file="Public:left-menu-aboutus"/>
+	            <div class="col-md-8" id="c2">
+	            	<!-- 招聘信息详情 -->
+	              	<volist name="res" id="vo">
+	              	    <p class="jobs-title"><{$vo.title}></p>
+	              	    <table>
+	              	    	<tr><td>招聘人数：</td><td><{$vo.numbers}>人</td> <td></td>   
+	              	    		<td>工作性质：</td><td><{$vo.type}></td></tr>
+	              	    	<tr><td>工作经验：</td><td><{$vo.experience}></td> <td></td>  
+	              	    		<td>工作地点：</td><td><{$vo.area}></td></tr>
+	              	    	<tr><td>学历要求：</td><td><{$vo.degrees}></td> <td></td> 
+	              	    		<td>工资待遇：</td><td><{$vo.treatment}>/年</td></tr>
+	              	    	<tr><td>发布日期：</td><td><{$vo.create_time}></td> <td></td>   
+	              	    		<td>截止日期：</td><td><{$vo.end_time}></td></tr>
+	              	    </table>
+	              	    <p class="jobs-describe">职位描述及要求：</p>
+	              	    <div class="describe-cont"><{$vo.describe_require|htmlspecialchars_decode}></div>
+	              	    <table id="jobs-contact">
+	              	    	<tr><td>联系电话：</td><td><{$vo.tel}></td> <td></td>   
+	              	    		<td>E-Mail：</td><td><{$vo.email}></td></tr>
+	              	    </table>
+
+	              	    <a class="btn btn-info" id="apply_but" href="__APP__/Aboutus/apply_job/id/<{$vo.id}>">申请该职位</a>
+	              	</volist>
+
+
+					<div class="back">
+						<a href="javascript:;" onclick="javascript:history.go(-1)">返回职位列表</a>
+					</div>
+					
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<include file="Public:back-top"/>
+	<!-- 引入能够动态分配数据的公共模板文件 -->
+	<{:R('Public/footer', '', 'Widget')}>
+
+
+
+	<!--[if lte IE 9]>
+	<script src="__PUBLIC__/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="__PUBLIC__/vendor/bootstrap/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script> -->
+	<script src="__PUBLIC__/vendor/bootstrap/js/jquery-1.9.1.js"></script>
+    <script src="__PUBLIC__/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+      });
+    </script>
+</body>
+</html>
