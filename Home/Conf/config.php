@@ -2,7 +2,7 @@
 return array(
 	//'配置项'=>'配置值'
 	
-	'DB_DSN' => 'mysql://root:333@localhost:3306/hanft',
+	'DB_DSN' => 'mysql://root:root@localhost:3306/hanft',
 	// 数据库表前缀
 	'DB_PREFIX' => 'wf_', 
 
